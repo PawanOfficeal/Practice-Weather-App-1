@@ -22,6 +22,8 @@
         </header>
         <main class="main-class">
            show weather here: <button type="button" class="btn">weather</button>
+           <p class="iconPara"></p>
+           <div class="showLoop"></div>
            <ul class="main-lsit">
 
            </ul>
@@ -44,15 +46,22 @@
             let inputCity = document.getElementById('inputCity')
             let cityName = document.querySelector("#inputCity").value;
             e.preventDefault();
-            fetch(`http://api.openweathermap.org/data/2.5/forecast?q=${cityName}&units=metric&appid=bb218504172d9d6b50d2f9de877c1a67`)
+            fetch
+            (`http://api.openweathermap.org/data/2.5/forecast?q=${cityName}&units
+            =metric&appid=bb218504172d9d6b50d2f9de877c1a67`)
             .then(res=>{
                 return res.json()
             })
             .then(data=>{
                 console.log(data)
-                mainClass.innerHTML = `<li>City: ${data.city.name} </li>
-                                                                <li>Temp Max:${data.list[0].main.temp_max}</li>`
-            })
+            
+            /*    mainClass.innerHTML =
+                                `<li>City: ${data.city.name} </li>
+                                <li>Temp Max:${data.list[0].main.temp_max}&deg;C</li>
+                                <li>Description:${data.list[0].weather[0].description}</li>
+                                `
+                            */
+             })
             .catch(error=>{
                 console.log(error)
             })
