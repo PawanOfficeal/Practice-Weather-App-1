@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--font awesome kit code-->
+   <script src="https://kit.fontawesome.com/11650525fa.js" crossorigin="anonymous" defer>
+    </script>
+    <!--style sheet-->
+    <link rel="stylesheet" href="style.css">
+    <title>Practice Weather App</title>
+</head>
+<body>
+    <div class="container">
+        <nav>
+         <span class="dot-span"><i class="fa-solid fa-ellipsis dots"></i></span>
+        </nav>
+        <header>
+            <p>LOGO</p>
+            <input type="text" placeholder="city name" id="inputCity">
+        </header>
+        <main class="main-class">
+           show weather here: <button type="button" class="btn">weather</button>
+           <ul class="main-lsit">
+
+           </ul>
+           <!--show data in <p>
+        
+             -->
+        </main>
+    </div>
+
+
+    <!---------------------JS----------------------------->
+     <script>
+        let btn = document.querySelector(".btn");
+       let mainClass = document.querySelector(".main-class");
+        //let weatherURL = 
+       // `http://api.openweathermap.org/data/2.5/forecast?q=${cityName}&units=metric&appid=
+        //bb218504172d9d6b50d2f9de877c1a67`
+
+        btn.addEventListener('click',(e)=>{
+            let inputCity = document.getElementById('inputCity')
+            let cityName = document.querySelector("#inputCity").value;
+            e.preventDefault();
+            fetch(`http://api.openweathermap.org/data/2.5/forecast?q=${cityName}&units=metric&appid=bb218504172d9d6b50d2f9de877c1a67`)
+            .then(res=>{
+                return res.json()
+            })
+            .then(data=>{
+                console.log(data)
+                mainClass.innerHTML = `<li>City: ${data.city.name} </li>
+                                                                <li>Temp Max:${data.list[0].main.temp_max}</li>`
+            })
+            .catch(error=>{
+                console.log(error)
+            })
+        })
+
+     </script>
+
+</body>
+</html>

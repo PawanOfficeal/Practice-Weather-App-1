@@ -1,0 +1,68 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    width: 100%;
+    height: auto;
+    background-image: linear-gradient(rgb(238, 182, 191),rgb(245, 163, 224));
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+}
+header{
+    width: 90%;
+    margin-left: 5%;
+    height: 4rem;
+    background-color: rgb(216, 248, 216);
+}
+.main-class{
+    width: 90%;
+    margin-left: 5%;
+    background-color: rgb(179, 245, 245);
+}
+.dot-span{
+    position: relative;
+    float: right;
+    padding-right: 2rem;
+    top:-8px;
+    font-size: 2rem;
+    color: rgb(35, 5, 63);
+}
+.btn{
+    position: relative;
+    width: 6rem;
+    height: 2rem;
+    background-color: lightseagreen;
+    border: none;
+    border-radius: 4px;
+    padding: 4px;
+    cursor: pointer;
+}
+.btn:hover{background-color: cornflowerblue;}
+.main-list{
+    width: 60%;
+    background-color: lightgray;
+    margin-left: 20%;
+}
+.main-list li{
+    width: 90%;
+    margin-left: 5%;
+    margin-top: .5rem;
+}
+
+
+
+
+
+
+/*media query for mobile:  */
+/*
+320px — 480px: Mobile devices
+481px — 768px: iPads, Tablets
+769px — 1024px: Small screens, laptops
+1025px — 1200px: Desktops, large screens
+1201px and more —  Extra large screens, TV
+*/
+/* 1. median query for max-width: 30em  */
